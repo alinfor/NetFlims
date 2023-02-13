@@ -1,0 +1,36 @@
+@use "../base/mixins" as *;
+.Toastify {
+  position: relative;
+
+  &__toast-container {
+    position: absolute;
+  }
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+}
+
+.Toastify__toast-container {
+  top: 8rem;
+  left: auto;
+  right: 0;
+  width: 22rem;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.1rem;
+
+  @include mq(tablet) {
+    top: 9rem;
+  }
+}
+
+.Toastify__close-button {
+  display: none;
+}
+
+.Toastify__toast-body {
+  display: flex;
+  gap: 0.6rem;
+}

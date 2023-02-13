@@ -1,0 +1,39 @@
+@use "../base/mixins" as *;
+
+.search_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 3rem 0 2rem 0;
+
+  @include mq(tablet) {
+    padding: 4rem 0 2rem 0;
+  }
+
+  .searchbar_input {
+    width: 100%;
+    font-size: 1.6rem;
+    margin-left: 2rem;
+    padding-bottom: 1rem;
+    // border-bottom: 1px solid #5a698f;
+
+    @include mq(tablet) {
+      font-size: 1.8rem;
+    }
+
+    &::placeholder {
+      font-weight: bold;
+      opacity: 0.5;
+      color: #5a698f;
+    }
+    &:focus {
+      // padding-bottom: 1rem;
+      border-bottom: 1px solid #5a698f;
+    }
+  }
+
+  .search_image {
+    width: 2.5em;
+  }
+}

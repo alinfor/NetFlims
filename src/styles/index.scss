@@ -1,0 +1,25 @@
+// == BASE CSS == //
+@use "./base/reset";
+@use "./base/fonts";
+@use "./base/mixins";
+@use "./base/base";
+
+// == LAYOUT == //
+@use "./layouts/navbar";
+
+// == COMPONENTS == //
+@use "./components/loader";
+@use "./components/trendingMovies";
+@use "./components/SearchBar";
+@use "./components/card";
+@use "./components/auth";
+@use "./components/modal";
+@use "./components/toastifyAlert";
+
+// == PAGES == //
+@use "./pages/dashboard";
+@use "./pages/details";
+@use "./pages/movies-series";
+@use "./pages/profile";
+@use "./pages/notFound";
+@use "./pages/contact";

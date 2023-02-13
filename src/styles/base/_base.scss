@@ -1,0 +1,48 @@
+@use "./mixins" as *;
+
+:root {
+  font-size: 10px;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.container {
+  width: min(100% - 3.2rem, 124rem);
+  margin-inline: auto;
+}
+
+.nav-container {
+  width: min(100% - 0rem, 124rem);
+  margin-inline: auto;
+
+  @include mq(tablet) {
+    width: min(100% - 5rem, 124rem);
+  }
+}
+
+// Le button entre les informations des films et séries
+.infos-circle {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+// Button to load more movies if the scroll is not possible
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+  font-size: 1.2rem;
+  button {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+// If we don't have bookmark
+.empty {
+  margin: auto;
+  margin-top: 6rem;
+  font-size: 1.6rem;
+}

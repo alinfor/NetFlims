@@ -1,0 +1,52 @@
+@use "./mixins" as *;
+// CSS variables for the fonts / colors
+:root {
+  // Dark color
+  --bg-dark: #10141e;
+  --bg-dark-nav: #161d2f;
+  --text-light: #ffffff;
+  --toastify-color-dark: #161d2f;
+
+  // Light color
+}
+
+.title {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.3125px;
+  margin-top: 2.4rem;
+
+  @include mq(tablet) {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    letter-spacing: -0.5px;
+    margin-top: 3.3rem;
+  }
+  @include mq(laptop) {
+    margin-top: 4rem;
+  }
+}
+
+.trending-title {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+
+  &-infos {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    opacity: 0.75;
+  }
+
+  @include mq(tablet) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+
+    &-infos {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+    }
+  }
+}

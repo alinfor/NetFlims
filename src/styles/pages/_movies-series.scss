@@ -1,0 +1,17 @@
+@use "../base/mixins" as *;
+
+.card {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    row-gap: 1.6rem;
+    margin-top: 2.4rem;
+    margin-bottom: 2rem;
+
+    @include mq(tablet) {
+      gap: 2.9rem;
+      row-gap: 2.4rem;
+    }
+  }
+}

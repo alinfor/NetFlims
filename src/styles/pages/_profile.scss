@@ -1,0 +1,123 @@
+@use "../base/mixins" as *;
+
+.profile {
+  margin-top: 10rem;
+  background-color: var(--bg-dark-nav);
+  border-radius: 2rem;
+  padding: 3.2rem;
+  max-width: 80rem;
+
+  @include mq(tablet) {
+    margin: auto;
+    margin-top: 14rem;
+  }
+
+  &-container {
+    @include mq(tablet) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include mq(tablet) {
+      align-items: start;
+    }
+
+    @include mq(laptop) {
+      margin-left: 2rem;
+    }
+
+    &-form {
+      width: 100%;
+      max-width: 33.6rem;
+
+      input {
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.1rem;
+        border-bottom: 1px solid #5a698f;
+        width: 100%;
+        padding: 0 0 1.8rem 1.6rem;
+        margin: 4rem 0 0 0;
+
+        @include mq(tablet) {
+          margin: 4rem 0 7.5rem 0;
+        }
+
+        @include mq(tablet) {
+          margin: 0 0 7.5rem 0;
+        }
+
+        &::placeholder {
+          opacity: 0.5;
+        }
+      }
+
+      &-button {
+        text-align: center;
+        max-width: 33.6rem;
+        width: 100%;
+        padding: 1.4rem 0 1.5rem 0;
+        border-radius: 6px;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.15rem;
+        cursor: pointer;
+        margin: auto;
+      }
+    }
+  }
+
+  &-avatar {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image {
+      margin: 4rem 0;
+
+      @include mq(tablet) {
+        margin: 0;
+        margin-bottom: 4rem;
+      }
+    }
+
+    .upload-file {
+      margin-top: 4rem;
+
+      input[type="file"] {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.button-red {
+  background-color: #fc4747;
+}
+
+.button-white {
+  background-color: #fff;
+  color: #161d2f;
+}
+
+.profile-link {
+  width: 100%;
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+
+  a {
+    border-bottom: 1px solid #fff;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../base/mixins" as *;
+
+.detail_container {
+  display: flex;
+  margin: 4em 0;
+  flex-direction: column;
+  gap: 2em;
+
+  @include mq(tablet) {
+    flex-direction: row;
+    margin: 6rem 0;
+    gap: 4rem;
+  }
+
+  .detail-image {
+    position: relative;
+    width: 100%;
+
+    img {
+      border-radius: 18px;
+    }
+
+    @include mq(tablet) {
+      width: 50%;
+    }
+  }
+
+  .detail-card {
+    display: flex;
+    flex-direction: column;
+
+    @include mq(tablet) {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    .overview {
+      margin-top: 2em;
+      font-size: 1.6rem;
+      letter-spacing: 0.1rem;
+      line-height: 2.2rem;
+      font-weight: 300;
+    }
+
+    &-info {
+      margin: 2rem 0 4rem 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+    }
+
+    .revenue {
+      margin-top: 2rem;
+    }
+  }
+}

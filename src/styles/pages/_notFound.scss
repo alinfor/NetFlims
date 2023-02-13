@@ -1,0 +1,21 @@
+@use "../base/mixins" as *;
+
+.not-found {
+  &-img {
+    max-width: 73.6rem;
+    margin: auto;
+  }
+
+  &-text {
+    text-align: center;
+
+    p {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &-link {
+    margin-top: 4rem;
+  }
+}
