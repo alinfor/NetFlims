@@ -1,7 +1,7 @@
 export const fetchScroll = (pageIndex) => {
   return async dispatch => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${import.meta.env.VITE_API_KEY}&page=${pageIndex}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${import.meta.env.VITE_API}&page=${pageIndex}`
     );
     // console.log(pageIndex)
     const responseData = await response.json();

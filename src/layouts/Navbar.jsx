@@ -22,7 +22,7 @@ const Navbar = ({ setSessionStatus }) => {
 
   const supabase = createClient(
     import.meta.env.VITE_PROJECT_URL,
-    import.meta.env.VITE_ANON_API_KEY
+    import.meta.env.VITE_ANON_API
   );
   async function signOutUser() {
     const { error } = await supabase.auth.signOut();
@@ -30,22 +30,28 @@ const Navbar = ({ setSessionStatus }) => {
   }
 
   useEffect(() => {
-    async function getUserData() {
-      async function getProfile(id) {
-        let { data, error, status } = await supabase
+    const getUserData = async () => {
+      try {
+        const userResponse = await supabase.auth.getUser();
+        if (userResponse.error) throw userResponse.error;
+        const { id } = userResponse.data.user;
+        
+        const { data, error } = await supabase
           .from("profiles")
-          .select(`username, website, avatar_url,id,bookmarks `)
+          .select("username, website, avatar_url, id, bookmarks")
           .eq("id", id)
           .single();
+        
+        if (error) throw error;
+        
         dispatch({ type: "INIT_USER", payload: data });
+      } catch (error) {
+        console.error("Error fetching user data:", error.message);
       }
-      await supabase.auth.getUser().then((value) => {
-        getProfile(value.data.user.id);
-      });
-    }
-    getUserData();
-  }, []);
+    };
 
+    getUserData();
+  }, [dispatch]);
   return (
     <section
       className="navbar"

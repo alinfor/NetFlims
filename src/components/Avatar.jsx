@@ -10,7 +10,7 @@ export default function Avatar({ url, size, onUpload }) {
 
   const supabase = createClient(
     import.meta.env.VITE_PROJECT_URL,
-    import.meta.env.VITE_ANON_API_KEY
+    import.meta.env.VITE_ANON_API
   );
 
   useEffect(() => {
