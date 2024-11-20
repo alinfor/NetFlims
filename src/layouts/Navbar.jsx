@@ -87,7 +87,7 @@ const Navbar = ({ setSessionStatus }) => {
             <img src={bookmark} alt="Go to your Favorites" />
           </NavLink>
         </div>
-        <ul>
+        {/* <ul>
           <li>
             <button
               onClick={() => setCartIsOpen(!cartIsOpen)}
@@ -109,7 +109,7 @@ const Navbar = ({ setSessionStatus }) => {
               <Modal setSessionStatus={setSessionStatus} user={user} />
             )}
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </section>
   );
